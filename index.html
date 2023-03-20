@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <link rel="StyleSheet" href="style.css" type="text/css" media="all">
+    <meta charset="UTF-8">
+    <title> Referring Multi-Object Tracking </title>
+</head>
+
+
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px"> Referring Multi-Object Tracking </span>
+    </div>
+
+    <br>
+    <table align="center" width="900px">
+        <tbody>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://wudongming97.github.io/">Dongming Wu<sup>1*</sup></a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://scholar.google.com/citations?user=hGZueIUAAAAJ">Wencheng Han<sup>2*</sup></a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://scholar.google.com/citations?user=YI0sRroAAAAJ">Tiancai Wang<sup>3</sup></a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://scholar.google.com/citations?user=3h3tZpAAAAAJ">Xingping Dong<sup>4</sup></a></span>
+                    </div>
+                </td>
+
+                		    
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center" width="900px">
+        <tbody>
+            <tr>   
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://scholar.google.com/citations?user=yuB-cfoAAAAJ">Xiangyu Zhang<sup>3,5</sup></a></span>
+                    </div>
+                </td>
+                
+        
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="https://shenjianbing.github.io/">Jianbing Shen<sup>2+</sup></a></span>
+                    </div>
+                </td>
+		    	    
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center" width="700px">
+        <tbody>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><sup>1</sup>Beijing Institute of Technology &nbsp; &nbsp; <sup>2</sup>SKL-IOTSC, CIS, University of Macau</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><sup>3</sup>MEGVII Technology &nbsp; &nbsp; <sup>4</sup>Inception Institute of Artificial Intelligence</span> &nbsp; &nbsp; </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"> <sup>5</sup>Beijing Academy of Artificial Intelligence</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center" width="700px">
+        <tbody>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:15px; color:#999"><sup>*</sup>Equal contribution. &nbsp; <sup>+</sup>Corresponding author. </span> 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+ <hr>
+
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p>
+	Existing referring understanding tasks tend to involve the detection of a single text-referred object. In this paper, we propose a new and general referring understanding task, termed referring multi-object tracking (RMOT). Its core idea is to employ a language expression as a semantic cue to guide the prediction of multi-object tracking. To the best of our knowledge, it is the first work to achieve an arbitrary number of referent object predictions in videos. To push forward RMOT, we construct one benchmark with scalable expressions based on KITTI, named Refer-KITTI. Specifically, it provides 18 videos with 818 expressions, and each expression in a video is annotated with an average of 10.7 objects. Further, we develop a transformer-based architecture TransRMOT to tackle the new task in an online manner, which achieves impressive detection performance and outperforms other counterparts.
+    </p>
+    <br><br>
+
+    <hr>
+
+    <div class="center-div">
+        <h1>Referring Multi-Object Tracking</h1>
+    </div>
+    <br>
+    <table align="center" width="600px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <iframe width="900px" height="315" src="https://www.youtube.com/embed/F9n_t9-TDlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>               
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <a href="#"><img src="./imgs/ref_kitti.png" width="900px"></a><br>
+                    </div>                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px"><i><strong>Examples of Refer-KITTI.</strong> It provides high-diversity scenes and high-quality annotations referred to by expressions</i>
+                        </span></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <a href="#"><img src="./imgs/labeling.png" width="900px"></a><br>
+                    </div>                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px"><i><strong>Labeling exemplar of our datasets. </strong> The turning action is labeled with only two clicks on bounding boxes at the starting and ending frames. The intermediate frames are automatically and efficiently labeled with the help of unique identities.It provides high-diversity scenes and high-quality annotations referred to by expressions</i>
+                        </span></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+	
+    <hr>
+    <div class="center-div">
+        <h1>TransRMOT</h1>
+    </div>
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <a href="#"><img src="./imgs/TransRMot.png" width="900px"></a><br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <span style="font-size:14px"><i><strong>The overall architecture of TransRMOT. </strong> It is an online cross-modal tracker and includes four essential parts: feature extractors, cross-modal encoder, decoder, and referent head. The feature extractors embed the input video and the corresponding language query into feature maps/vectors. The cross-modal encoder models comprehensive visual-linguistic representation via efficient fusion. The decoder takes the visual-linguistic features, detect queries and the track queries as inputs and updates the representation of queries. The updated queries are further used to predict the referred objects by the referent head.</i>
+                        </span></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div" align="center">
+        <h2 id="paper">Publication</h2>
+    </div>
+    <table align="center">
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:200px" src="./imgs/firstpage.png">
+                </td>
+                <td>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">Referring Multi-Object Tracking
+                    </span></b>
+                    <br><br>
+                    <span style="font-size:14pt">  Dongming Wu, Wencheng Han, Tiancai Wang, Xingping Dong, Xiangyu Zhang, Jianbing Shen</span>
+                    <br><br>
+                    <span style="font-size:18px">
+                        <a href="https://arxiv.org/pdf/2303.03366.pdf">[Paper]</a>
+                        <a href="https://github.com/wudongming97/RMOT">[Code]</a>
+                        <a href="">[Dataset (Coming Soon)]</a>
+			             <a href="./bibtex/index.html">[Bibtex]</a>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Results</h1>
+    </div>
+    <div class="center-div">
+        <br>
+        <table align="center">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="center-div" align="center">
+                            <a href="#"><img src="./imgs/result.png" width="900px"></a><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <span style="font-size:16px"><i> </i>
+                            </span></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Citation</h1>
+                        </div>
+<!--                         <div class="center-div"> -->
+			    @InProceedings{wu2023referring,<br>
+					 &emsp;&emsp;title={Referring Multi-Object Tracking},<br>
+	 				 &emsp;&emsp;author= {Wu and Han and Wang and Dong and Zhang and Shen},<br>
+ 					 &emsp;&emsp;booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},<br>
+ 					 &emsp;&emsp;year={2023},<br>
+					 }                
+			<br><br>	
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+    <br><br>
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+<!--                             This work was supported in part by  National Natural Science Foundation of China (Grant No. 6210020439), -->
+<!-- 			Lingang Laboratory (Grant No. LG-QS-202202-07), Natural Science Foundation of Shanghai (Grant No. 22ZR1407500),  -->
+<!-- 			Shanghai Municipal Science and Technology Major Project (Grant No. 2018SHZDZX01 and 2021SHZDZX0103),  -->
+<!-- 			Science and Technology Innovation 2030 - Brain Science and Brain-Inspired Intelligence Project (Grant No. 2021ZD0200204),  -->
+<!-- 			MindSpore and CAAI-Huawei MindSpore Open Fund. -->
+			The corresponding authors are Li Zhang, and Hang Xu.
+			<br><br>	
+			This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and 
+			<a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; 
+			the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+</body>
+
+</html>
